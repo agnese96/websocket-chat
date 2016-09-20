@@ -6,13 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>WebChat</title>
-	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/main.css" rel="stylesheet">
+    
+    
     <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	
+    <script>chatApp=angular.module("webChat",[]);</script>
+    <script src="/angular/directives.js"></script>
+    <script src="/angular/controllers.js"></script>
     <script src="/app.js"></script>
+    
+    <link href="/main.css" rel="stylesheet">
 </head>
-<body>
+<body data-ng-app="webChat" data-ng-controller="appController">
+    <nav class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="#">WebChat</a>
+            </div>
+            
+            <div class="collapse navbar-collapse" >
+            	<navbar-login data-ng-show="!login"></navbar-login>
+		        <navbar-user data-ng-show="login"></navbar-user>
+            </div>
+            
+            
+            
+        </div>
+        
+        
+    </nav>
 
 </body>
